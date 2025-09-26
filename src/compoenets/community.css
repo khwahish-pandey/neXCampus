@@ -1,0 +1,68 @@
+/* --- NEW: The outer "page" container --- */
+.communities-page-container {
+    max-width: 56rem;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.2);
+    border: 1px solid #e2e8f0;
+}
+
+.communities-section-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1e293b;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+/* --- UPDATED: The new scrollable container --- */
+.communities-scroll-area {
+    max-height: 450px; /* Key property: sets a maximum height */
+    overflow-y: auto;  /* Key property: adds a scrollbar only when needed */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-right: 1rem; /* Creates space for the scrollbar */
+    margin-right: -1rem; /* Offsets the padding to keep content aligned */
+}
+
+/* --- Styling the scrollbar for a modern look (optional but recommended) --- */
+.communities-scroll-area::-webkit-scrollbar {
+    width: 8px;
+}
+.communities-scroll-area::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 10px;
+}
+.communities-scroll-area::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+.communities-scroll-area::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+
+/* Community card styling remains largely the same */
+.community-card {
+    background-color: #f8fafc;
+    border-radius: 0.75rem;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    flex-shrink: 0; /* Prevents cards from shrinking in the flex container */
+    transition: transform 0.2s ease-in-out, border-color 0.2s;
+}
+
+.community-card:hover {
+    transform: scale(1.01);
+    border-color: #c7d2fe;
+}
+
+/* ... all other styles for .community-card-content, .join-button, and .popup remain the same ... */
+.community-card-content{flex-grow:1}.community-name{font-size:1.125rem;font-weight:600;color:#0f172a;margin:0 0 .25rem 0}.community-description{font-size:.875rem;color:#64748b;margin:0;line-height:1.5}.join-button{flex-shrink:0;width:2.75rem;height:2.75rem;border-radius:50%;border:none;background-color:#eef2ff;color:#4f46e5;display:flex;align-items:center;justify-content:center;cursor:pointer;margin-left:1.5rem;transition:background-color .2s,transform .2s}.join-button:hover{background-color:#4f46e5;color:#fff;transform:scale(1.1)}.join-button svg{width:1.5rem;height:1.5rem}.join-button.joined{background-color:#dcfce7;color:#22c55e;cursor:not-allowed}.join-button.joined:hover{background-color:#dcfce7;color:#22c55e;transform:none}@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes scaleIn{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}.popup-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(15,23,42,.7);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;z-index:1000;animation:fadeIn .3s ease-out}.popup-content{background-color:#fff;padding:2rem 2.5rem;border-radius:1rem;text-align:center;max-width:400px;width:90%;position:relative;box-shadow:0 25px 50px -12px rgba(0,0,0,.25);animation:scaleIn .3s ease-out}.popup-close-btn{position:absolute;top:.75rem;right:.75rem;border:none;background:0 0;font-size:2rem;color:#9ca3af;cursor:pointer;line-height:1}.popup-icon-container{width:4rem;height:4rem;margin:0 auto 1.5rem;border-radius:50%;background-color:#dcfce7;display:flex;align-items:center;justify-content:center}.popup-icon{width:2.5rem;height:2.5rem;color:#22c55e}.popup-title{font-size:1.5rem;font-weight:600;color:#1e293b;margin:0 0 .5rem 0}.popup-message{font-size:1rem;color:#475569;margin:0}.popup-message strong{color:#312e81}

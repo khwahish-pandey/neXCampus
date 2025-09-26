@@ -1,0 +1,68 @@
+.info-grid-container {
+    max-width: 64rem; /* Aligns with other dashboard components */
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.info-icon-grid {
+    display: grid;
+    /* Creates a responsive grid that fits as many cards as possible */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+.info-card {
+    background-color: #f8fafc; /* A very light gray, almost white */
+    border: 1px solid #e2e8f0; /* Light gray border */
+    border-radius: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+.info-card-icon {
+    width: 3.5rem; /* 56px */
+    height: 3.5rem;
+    transition: transform 0.2s ease-in-out;
+}
+
+.info-card:hover .info-card-icon {
+    transform: scale(1.1);
+}
+
+.info-card-label {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+/* --- Color Utility Classes --- */
+/* These classes set the color for BOTH the icon stroke and the text label */
+
+.info-card.color-red {
+    color: #ef4444; /* Red-500 */
+}
+
+.info-card.color-blue {
+    color: #3b82f6; /* Blue-500 */
+}
+
+.info-card.color-green {
+    color: #22c55e; /* Green-500 */
+}
+
+.info-card.color-gray {
+    color: #6b7280; /* Gray-500 */
+}
