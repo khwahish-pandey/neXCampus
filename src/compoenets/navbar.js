@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom'; // Using Link for better navigation
 const Navbar = () => {
   // A helper function to manage class names for nav links
   const linkClasses = "text-indigo-100 text-base font-medium rounded-full px-4 py-2 transition-all duration-300 ease-in-out hover:bg-indigo-500/40 hover:text-white hover:scale-105";
+  const handleLogout=async(e)=>{
+
+  }
 
   return (
     <nav className="sticky top-0 z-50 bg-blue-950 backdrop-blur-lg border-b border-indigo-500/30 shadow-lg">
@@ -32,6 +35,13 @@ const Navbar = () => {
               <Link to="/others" className={linkClasses}>
                 Others
               </Link>
+              <button
+              onClick={handleLogout}
+              className={linkClasses}
+              >
+                Log Out
+              </button>
+
             </div>
           </div>
 

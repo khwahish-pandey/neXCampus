@@ -3,10 +3,6 @@ import StudentDashboard from "./compoenets/studentdashboard";// Update the impor
 import DashboardWidgets from "./compoenets/progressbar";
 import InfoGrid from "./compoenets/info";
 import StudentCommunities from "./compoenets/community";
-import AboutSection from "./compoenets/update";
-import TodoList from "./compoenets/todo";
-import { Link } from 'react-router-dom';
-import AssignmentsPanel from "./compoenets/assignment";
 
 function App() {
   const studentData = {
@@ -29,15 +25,20 @@ const studentOverview = {
    <>
       
       <Navbar/>
-     
-         <AboutSection 
-        studentName={studentOverview.name}
-        semesterProgress={studentOverview.semesterProgress}
-        pendingTasks={studentOverview.pendingTasks}
-        updatedPortion={studentOverview.updatedPortion}
-      />
-      <AssignmentsPanel />
-      <TodoList/>
+      <StudentDashboard
+        name="John Doe"
+        usn="1MS20CS001"
+        branch="Computer Science"
+        year="3rd Year"
+        section="A"
+        imageUrl="https://randomuser.me/api/portraits"/>
+        <DashboardWidgets
+          attendance={progressData.attendance}
+          courseCompletion={progressData.courseCompletion}
+          exams={progressData.exams}
+        />
+        <InfoGrid />
+        <StudentCommunities />
      </> 
     
     
