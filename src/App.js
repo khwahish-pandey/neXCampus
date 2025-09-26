@@ -3,7 +3,9 @@ import StudentDashboard from "./compoenets/studentdashboard";// Update the impor
 import DashboardWidgets from "./compoenets/progressbar";
 import InfoGrid from "./compoenets/info";
 import StudentCommunities from "./compoenets/community";
-
+import Login from './pages/login'
+import Signup from './pages/signup'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 function App() {
   const studentData = {
   name: 'Alex Doe',
@@ -18,28 +20,36 @@ const progressData = {
   courseCompletion: 62,
   exams: 76
 };
-  return (
-    // Example with a background image to really see the transparent effect
-   <>
-      
-      <Navbar/>
-      <StudentDashboard
-        name="John Doe"
-        usn="1MS20CS001"
-        branch="Computer Science"
-        year="3rd Year"
-        section="A"
-        imageUrl="https://randomuser.me/api/portraits"/>
-        <DashboardWidgets
-          attendance={progressData.attendance}
-          courseCompletion={progressData.courseCompletion}
-          exams={progressData.exams}
+ return (
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Navbar />
+              <StudentDashboard
+                name="John Doe"
+                usn="1MS20CS001"
+                branch="Computer Science"
+                year="3rd Year"
+                section="A"
+                imageUrl="https://randomuser.me/api/portraits"
+              />
+              <DashboardWidgets
+                attendance={progressData.attendance}
+                courseCompletion={progressData.courseCompletion}
+                exams={progressData.exams}
+              />
+              <InfoGrid />
+              <StudentCommunities />
+            </>
+          }
         />
-        <InfoGrid />
-        <StudentCommunities />
-     </> 
-    
-    
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
+    </Router>
   );
 }
 
