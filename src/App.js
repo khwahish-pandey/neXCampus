@@ -3,6 +3,10 @@ import StudentDashboard from "./compoenets/studentdashboard";// Update the impor
 import DashboardWidgets from "./compoenets/progressbar";
 import InfoGrid from "./compoenets/info";
 import StudentCommunities from "./compoenets/community";
+import AboutSection from "./compoenets/update";
+import TodoList from "./compoenets/todo";
+import { Link } from 'react-router-dom';
+import AssignmentsPanel from "./compoenets/assignment";
 
 function App() {
   const studentData = {
@@ -13,30 +17,27 @@ function App() {
 };
 
 // Data for the new progress section
-const progressData = {
-  attendance: 85,
-  courseCompletion: 62,
-  exams: 76
+
+const studentOverview = {
+  name: 'Alex',
+  semesterProgress: 68,
+  pendingTasks: 5,
+  updatedPortion: 3 // e.g., 3 new documents or modules
 };
   return (
     // Example with a background image to really see the transparent effect
    <>
       
       <Navbar/>
-      <StudentDashboard
-        name="John Doe"
-        usn="1MS20CS001"
-        branch="Computer Science"
-        year="3rd Year"
-        section="A"
-        imageUrl="https://randomuser.me/api/portraits"/>
-        <DashboardWidgets
-          attendance={progressData.attendance}
-          courseCompletion={progressData.courseCompletion}
-          exams={progressData.exams}
-        />
-        <InfoGrid />
-        <StudentCommunities />
+     
+         <AboutSection 
+        studentName={studentOverview.name}
+        semesterProgress={studentOverview.semesterProgress}
+        pendingTasks={studentOverview.pendingTasks}
+        updatedPortion={studentOverview.updatedPortion}
+      />
+      <AssignmentsPanel />
+      <TodoList/>
      </> 
     
     
