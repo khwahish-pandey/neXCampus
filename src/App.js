@@ -6,6 +6,8 @@ import StudentCommunities from "./compoenets/community";
 import Login from './pages/login'
 import Signup from './pages/signup'
 import Chatbox from './compoenets/chatbox'
+import Canteen from './pages/canteen'
+import AdminCanteen from './pages/adminCanteen'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 function App() {
   const studentData = {
@@ -31,6 +33,7 @@ const studentOverview = {
           element={
             <>
               <Navbar />
+              <Chatbox />
               <StudentDashboard
                 name="John Doe"
                 usn="1MS20CS001"
@@ -39,11 +42,11 @@ const studentOverview = {
                 section="A"
                 imageUrl="https://randomuser.me/api/portraits"
               />
-              <DashboardWidgets
+              {/* <DashboardWidgets
                 attendance={progressData.attendance}
                 courseCompletion={progressData.courseCompletion}
                 exams={progressData.exams}
-              />
+              /> */}
               <InfoGrid />
               <StudentCommunities />
             </>
@@ -51,6 +54,8 @@ const studentOverview = {
         />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/canteen" element={<Canteen />} />
+        <Route path="/admin/canteen" element={<AdminCanteen />} />
       </Routes>
     </Router>
   );

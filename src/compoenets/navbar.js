@@ -39,6 +39,9 @@ const Navbar = () => {
               <Link to="/others" className={linkClasses}>
                 Others
               </Link>
+              <Link to="/canteen" className={linkClasses}>
+                Canteen
+              </Link>
               <button
               onClick={handleLogout}
               className={linkClasses}
