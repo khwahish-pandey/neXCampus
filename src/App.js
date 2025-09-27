@@ -16,43 +16,37 @@ function App() {
 };
 
 // Data for the new progress section
-const progressData = {
-  attendance: 85,
-  courseCompletion: 62,
-  exams: 76
+
+const studentOverview = {
+  name: 'Alex',
+  semesterProgress: 68,
+  pendingTasks: 5,
+  updatedPortion: 3 // e.g., 3 new documents or modules
 };
- return (
-    <Router>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Navbar />
+  return (
+    // Example with a background image to really see the transparent effect
+   <>
+      
+      <Navbar/>
               <Chatbox />
-              <StudentDashboard
-                name="John Doe"
-                usn="1MS20CS001"
-                branch="Computer Science"
-                year="3rd Year"
-                section="A"
-                imageUrl="https://randomuser.me/api/portraits"
-              />
-              <DashboardWidgets
-                attendance={progressData.attendance}
-                courseCompletion={progressData.courseCompletion}
-                exams={progressData.exams}
-              />
-              <InfoGrid />
-              
-              <StudentCommunities />
-            </>
-          }
+      <StudentDashboard
+        name="John Doe"
+        usn="1MS20CS001"
+        branch="Computer Science"
+        year="3rd Year"
+        section="A"
+        imageUrl="https://randomuser.me/api/portraits"/>
+        <DashboardWidgets
+          attendance={progressData.attendance}
+          courseCompletion={progressData.courseCompletion}
+          exams={progressData.exams}
         />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-      </Routes>
-    </Router>
+        <InfoGrid />
+              
+        <StudentCommunities />
+     </> 
+    
+    
   );
 }
 
