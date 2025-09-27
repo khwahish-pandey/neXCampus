@@ -27,7 +27,7 @@ const Navbar = () => {
           {/* Navigation Links */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-6">
-              <Link to="/" className={linkClasses}>
+              <Link to="/dashboard" className={linkClasses}>
                 Dashboard
               </Link>
               <Link to="/about" className={linkClasses}>

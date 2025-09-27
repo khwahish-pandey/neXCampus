@@ -1,5 +1,5 @@
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from "./compoenets/navbar";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AnnouncementList from "./compoenets/announcementlist";
 import AnnouncementDetail from "./compoenets/announcementdata";
 import './App.css';
@@ -18,32 +18,29 @@ import StudentDashboard from "./compoenets/studentdashboard";
 import DashboardWidgets from "./compoenets/progressbar";
 import InfoGrid from "./compoenets/info";
 import StudentCommunities from "./compoenets/community";
-
+import TeacherDashbaord from "./pages/teacherDashboard"
+import {motion, AnimatePresence} from 'framer-motion'
 const progressData = {
   attendance: 85,
   courseCompletion: 62,
   exams: 76
 };
 
-function App() {
-  const studentData = {
-  name: 'Alex Doe',
-  usn: '1DS23ET057',
-  // ... other student data
-  imageUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80'
-};
+function AppContent() {
+  const location = useLocation();
+  const hideNavbarRoutes = ['/teacher/dashboard', '/login', '/signup', '/admin/canteen'];
+  const hideNavbar = hideNavbarRoutes.includes(location.pathname);
 
-// Data for the new progress section
-
-const studentOverview = {
-  name: 'Alex',
-  semesterProgress: 68,
-  pendingTasks: 5,
-  updatedPortion: 3 // e.g., 3 new documents or modules
-};
   return (
-    <Router>
-      <Navbar />
+     <AnimatePresence mode="wait">
+     <motion.div
+        key={location.pathname}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -20 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+      {!hideNavbar && <Navbar />}
       <Routes>
         <Route
           path="/"
@@ -75,9 +72,21 @@ const studentOverview = {
         <Route path="/others" element={<Others />} />
         <Route path="/chat" element={<Chatbox />} />
         <Route path="/canteen" element={<Canteen />} />
-        <Route path="/admin-canteen" element={<AdminCanteen />} />
+        <Route path="/admin/canteen" element={<AdminCanteen />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/teacher/dashboard" element={<TeacherDashbaord />} />
+         
         {/* Add other routes as needed */}
       </Routes>
+      </motion.div>
+    </AnimatePresence>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
     </Router>
   );
 }

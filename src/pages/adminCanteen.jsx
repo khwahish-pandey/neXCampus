@@ -31,11 +31,12 @@ const RestaurantOrders = () => {
 
   // Mark order as completed
   const markOrderComplete = async (orderId) => {
+    console.log(orderId)
     try {
       setCompletingOrders(prev => new Set([...prev, orderId]));
       
       // Replace with your actual backend URL
-      const response = await fetch(`/api/orders/${orderId}/complete`, {
+      const response = await fetch(`http://localhost:5000/api/canteen/admin/complete/${orderId}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',

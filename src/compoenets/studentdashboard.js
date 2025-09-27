@@ -54,7 +54,7 @@ const StudentDashboard = ({ name, usn, branch, year, section, imageUrl }) => {
                     </div>
                     <div className="image-section">
                         <img
-                            src={imageUrl}
+                            src={"https://randomuser.me/api/portraits/men/1.jpg"}
                             alt="Student Profile"
                             className="student-image"
                         />
