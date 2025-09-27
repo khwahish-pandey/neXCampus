@@ -1,6 +1,10 @@
 import React from 'react'
+import AboutSection from './compoenets/about1';
+import AssignmentsPanel from './compoenets/assignment';
+import TodoList from './compoenets/todo';
+import SkillsPanel from './compoenets/ai';
 
-function about() {
+function About() {
     const studentData = {
   name: 'Alex Doe',
   usn: '1DS23ET057',
@@ -11,7 +15,7 @@ function about() {
 // Data for the new progress section
 
 const studentOverview = {
-  name: 'Alex',
+  name: 'Alexa',
   semesterProgress: 68,
   pendingTasks: 5,
   updatedPortion: 3 // e.g., 3 new documents or modules
@@ -34,4 +38,4 @@ const studentOverview = {
   )
 }
 
-export default about
+export default About

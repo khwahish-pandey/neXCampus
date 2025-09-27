@@ -4,6 +4,11 @@ import AnnouncementList from "./compoenets/announcementlist";
 import AnnouncementDetail from "./compoenets/announcementdata";
 import './App.css';
 import AutoScroller from "./compoenets/auto";
+import Sidebar from "./compoenets/side";
+import Dashboard from "./dashboard";
+import About from "./about";
+import Announcement from "./announcement";
+import Others from "./others";
 
 function App() {
   
@@ -12,14 +17,14 @@ function App() {
    <>
       
       <Navbar/>
-      {/* <Announcements/> */}
        <Routes>
-        <Route path="/" element={<AnnouncementList />} />
-        {/* This route is no longer used by the UI but remains here as requested */ }
-        <Route path="/announcements-list" element={<AnnouncementList />} />
-        <Route path="/announcement/:id" element={<AnnouncementDetail />} />
-      </Routes>
-      <AutoScroller/>
+        <Route path="/dashboard" element={<Dashboard/>} />
+          <Route path="/about" element={<About/>} />
+           <Route path="/announcement" element={<Announcement/>} />
+          <Route path="/others" element={<Others/>} />
+       </Routes>
+     
+      {/* <Sidebar/> */}
     
      </> 
      

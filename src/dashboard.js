@@ -13,12 +13,12 @@ function Dashboard() {
   return (
     <div>
        <StudentDashboard
-        name="John Doe"
+        name="Alexa"
         usn="1MS20CS001"
         branch="Computer Science"
         year="3rd Year"
         section="A"
-        imageUrl="https://randomuser.me/api/portraits"/>
+        imageUrl="/photos/ChatGPT Image Sep 27, 2025, 09_34_29 AM.png"/>
         <DashboardWidgets
           attendance={progressData.attendance}
           courseCompletion={progressData.courseCompletion}
