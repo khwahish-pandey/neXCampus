@@ -1,45 +1,28 @@
 import Navbar from "./compoenets/navbar";
-import StudentDashboard from "./compoenets/studentdashboard";// Update the import name
-import DashboardWidgets from "./compoenets/progressbar";
-import InfoGrid from "./compoenets/info";
-import StudentCommunities from "./compoenets/community";
+import { Routes, Route } from 'react-router-dom';
+import AnnouncementList from "./compoenets/announcementlist"; 
+import AnnouncementDetail from "./compoenets/announcementdata";
+import './App.css';
+import AutoScroller from "./compoenets/auto";
 
 function App() {
-  const studentData = {
-  name: 'Alex Doe',
-  usn: '1DS23ET057',
-  // ... other student data
-  imageUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80'
-};
-
-// Data for the new progress section
-
-const studentOverview = {
-  name: 'Alex',
-  semesterProgress: 68,
-  pendingTasks: 5,
-  updatedPortion: 3 // e.g., 3 new documents or modules
-};
+  
   return (
     // Example with a background image to really see the transparent effect
    <>
       
       <Navbar/>
-      <StudentDashboard
-        name="John Doe"
-        usn="1MS20CS001"
-        branch="Computer Science"
-        year="3rd Year"
-        section="A"
-        imageUrl="https://randomuser.me/api/portraits"/>
-        <DashboardWidgets
-          attendance={progressData.attendance}
-          courseCompletion={progressData.courseCompletion}
-          exams={progressData.exams}
-        />
-        <InfoGrid />
-        <StudentCommunities />
+      {/* <Announcements/> */}
+       <Routes>
+        <Route path="/" element={<AnnouncementList />} />
+        {/* This route is no longer used by the UI but remains here as requested */ }
+        <Route path="/announcements-list" element={<AnnouncementList />} />
+        <Route path="/announcement/:id" element={<AnnouncementDetail />} />
+      </Routes>
+      <AutoScroller/>
+    
      </> 
+     
     
     
   );

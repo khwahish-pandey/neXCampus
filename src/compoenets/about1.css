@@ -1,0 +1,108 @@
+.about-section-wrapper {
+    background-color: #f1f5f9; /* A light, clean background */
+    padding: 3rem 0;
+}
+
+.about-section-container {
+    max-width: 64rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.about-header {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e293b;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns on larger screens */
+    gap: 1.5rem;
+}
+
+.overview-card {
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column; /* Stacks content vertically */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.overview-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.overview-card-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.overview-card-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Icon Color Varieties */
+.overview-card-icon.icon-blue {
+    background-color: #dbeafe; /* Blue-100 */
+    color: #3b82f6; /* Blue-500 */
+}
+.overview-card-icon.icon-red {
+    background-color: #fee2e2; /* Red-100 */
+    color: #ef4444; /* Red-500 */
+}
+.overview-card-icon.icon-green {
+    background-color: #dcfce7; /* Green-100 */
+    color: #22c55e; /* Green-500 */
+}
+
+.overview-card-content h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #334155;
+    margin: 0 0 0.5rem 0;
+}
+
+.overview-data {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1;
+    margin: 0;
+}
+
+.overview-cta {
+    margin-top: auto; /* Pushes this to the bottom of the card */
+    padding-top: 1rem;
+    font-weight: 500;
+    color: #4f46e5; /* Indigo-600 */
+    transition: color 0.2s;
+}
+
+.overview-card:hover .overview-cta {
+    color: #312e81; /* Darker Indigo on hover */
+}
+
+/* --- Responsive Styles --- */
+@media (max-width: 768px) {
+    .overview-grid {
+        grid-template-columns: 1fr; /* Stacks the cards into a single column */
+    }
+    .about-header {
+        font-size: 1.75rem;
+    }
+}

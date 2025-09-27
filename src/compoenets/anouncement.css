@@ -1,0 +1,114 @@
+/* --- NEW: Wrapper to make the entire section smaller --- */
+.announcement-container {
+  max-width: 800px; /* Reduced from taking full width of its parent */
+  margin: 0 auto;   /* Center the smaller container */
+}
+
+.announcement-container h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem; /* Slightly smaller heading */
+  color: #2c3e50;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.announcement-container .header-wrapper {
+  text-align: center; /* Helper to center the H2 */
+}
+
+/* --- UPDATED: Styles for smaller, more compact cards --- */
+.announcements-list {
+  text-align: left;
+}
+
+.announcement-card {
+  background-color: #ffffff;
+  border-radius: 6px; /* Smaller radius */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
+  margin-bottom: 1rem; /* Reduced space between cards */
+  padding: 1rem 1.25rem; /* Reduced padding */
+  border-left: 4px solid #3498db;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.announcement-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.11);
+}
+
+.card-header h3 {
+  margin: 0 0 0.25rem 0; /* Reduced bottom margin */
+  font-size: 1.15rem; /* Smaller title font size */
+  color: #2c3e50;
+  line-height: 1.4;
+}
+
+.metadata {
+  font-size: 0.8rem; /* Smaller metadata font */
+  color: #7f8c8d;
+  margin-bottom: 0.75rem; /* Reduced space below metadata */
+  border-bottom: 1px solid #ecf0f1;
+  padding-bottom: 0.5rem;
+}
+
+.card-content-preview p {
+  font-size: 0.9rem; /* Smaller preview text */
+  color: #555;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.read-more-btn {
+  display: inline-block;
+  background-color: #3498db;
+  color: #fff;
+  padding: 6px 14px; /* Smaller button */
+  font-size: 0.85rem; /* Smaller button text */
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.read-more-btn:hover {
+  background-color: #2980b9;
+}
+
+/* --- Detail Page Styles (largely unchanged) --- */
+.announcement-detail {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem 2.5rem;
+  text-align: left;
+  border-top: 5px solid #3498db;
+}
+
+.announcement-detail .card-content {
+  font-size: 1rem; color: #34495e;
+}
+.announcement-detail .card-content p { margin: 0 0 1rem 0; }
+.announcement-detail .card-content ul { padding-left: 20px; margin-bottom: 1rem; }
+.announcement-detail .card-content li { margin-bottom: 0.5rem; }
+.announcement-detail .card-content a { color: #3498db; text-decoration: none; font-weight: bold; }
+
+.back-link {
+  display: inline-block;
+  margin-top: 2rem;
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.tag {
+  display: inline-block;
+  padding: 3px 9px; /* Smaller tag */
+  font-size: 0.75rem; /* Smaller tag font */
+  font-weight: bold;
+  color: #fff;
+  border-radius: 12px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
