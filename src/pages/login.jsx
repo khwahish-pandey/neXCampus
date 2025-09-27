@@ -20,7 +20,7 @@ const navigate=useNavigate();
       },
       body: JSON.stringify({ email, password }),
     });
-
+    console.log(response)
     const data = await response.json();
     if(response.status===404){
       alert(" user not found");
@@ -47,7 +47,12 @@ const navigate=useNavigate();
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ access_token: tokenResponse.access_token }),
       });
-  
+      console.log(response)
+      
+      if(!response.ok){
+        alert("google login not working")
+        return
+      }
       const data = await response.json();
       if(response.ok){
       localStorage.setItem("token",data.token);

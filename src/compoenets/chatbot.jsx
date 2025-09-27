@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import { ai } from '../config'
 
 export default function ChatBox({ onClose }) {
   const [input, setInput] = useState('');
@@ -16,16 +16,16 @@ export default function ChatBox({ onClose }) {
     setInput('');
 
     try{
-      const res =await fetch ('/.netlify/functions/chat',{
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body :JSON.stringify({message:userMessage})
-      })
-     
-      const data=await res.json();
+        console.log('inside try')
+        const res =await ai.models.generateContent({
+        model: "gemini-2.5-flash",
+        contents: userMessage +" answer under 70 words",
+     });
+       console.log(res)
+      const data=res.candidates[0].content.parts[0].text;
+      console.log("data",data);
       
-      
-      setMessages(prev =>[...prev,{from:'bot',text:data.reply||"sorry, I didnt get that"}])
+      setMessages(prev =>[...prev,{from:'bot',text:data||"sorry, I didnt get that"}])
     } catch(err){
    
       setMessages(prev =>[...prev,{from:'bot',text:"error"}])

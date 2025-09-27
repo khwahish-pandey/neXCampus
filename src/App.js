@@ -5,6 +5,7 @@ import InfoGrid from "./compoenets/info";
 import StudentCommunities from "./compoenets/community";
 import Login from './pages/login'
 import Signup from './pages/signup'
+import Chatbox from './compoenets/chatbox'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 function App() {
   const studentData = {
@@ -28,6 +29,7 @@ const progressData = {
           element={
             <>
               <Navbar />
+              <Chatbox />
               <StudentDashboard
                 name="John Doe"
                 usn="1MS20CS001"
@@ -42,6 +44,7 @@ const progressData = {
                 exams={progressData.exams}
               />
               <InfoGrid />
+              
               <StudentCommunities />
             </>
           }

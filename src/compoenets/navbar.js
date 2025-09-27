@@ -1,11 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Using Link for better navigation
+import { Link, useNavigate } from 'react-router-dom'; // Using Link for better navigation
 
 const Navbar = () => {
+  const navigate=useNavigate()
   // A helper function to manage class names for nav links
   const linkClasses = "text-indigo-100 text-base font-medium rounded-full px-4 py-2 transition-all duration-300 ease-in-out hover:bg-indigo-500/40 hover:text-white hover:scale-105";
   const handleLogout=async(e)=>{
+      e.preventDefault();
+  localStorage.removeItem('token');
 
+  navigate('/login')
   }
 
   return (
